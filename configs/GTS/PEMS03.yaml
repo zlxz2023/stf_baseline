@@ -1,0 +1,37 @@
+---
+base_dir: runs/log/GTS
+log_level: INFO
+data:
+  batch_size: 16
+  train_val_test_ratio: [0.7, 0.1, 0.2]
+  shuffle: true
+  num_workers: 0
+  dataset_dir: ../Data2Model/datasets/PEMS03
+
+model:
+  temperature: 0.5
+  num_nodes: 358
+  input_len: 96
+  output_len: 12
+  input_dim: 2
+  output_dim: 1
+  use_curriculum_learning: true
+  cl_decay_steps: 2000
+  dim_fc: 293248
+  rnn_units: 64
+  num_rnn_layers: 1
+  filter_type: dual_random_walk
+  l1_decay: 0
+  max_diffusion_step: 3
+
+train:
+  optimizer: adam
+  max_grad_norm: 5
+  epoch_use_regularization: 200
+  base_lr: 0.005
+  steps: [20, 30, 40]
+  patience: 100
+  epochs: 100
+  lr_decay_ratio: 0.1
+  epsilon: 0.001
+  knn_k: 10

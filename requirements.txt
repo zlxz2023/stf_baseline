@@ -1,0 +1,14 @@
+# Python 3.10+. Install with: python -m pip install -r requirements.txt
+# For GPU training, install the PyTorch build matching your CUDA environment
+# first, following https://pytorch.org/get-started/locally/ .
+# These are direct dependency constraints, not a fully tested environment lock.
+torch>=2.0,<3
+numpy>=1.24,<3
+pandas>=2.0,<3
+scipy>=1.10,<2
+scikit-learn>=1.2,<2
+PyYAML>=6.0,<7
+tqdm>=4.65,<5
+torchinfo>=1.8,<2
+PyWavelets>=1.4,<2
+fastdtw==0.3.4

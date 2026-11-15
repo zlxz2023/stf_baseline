@@ -1,0 +1,30 @@
+---
+base_dir: runs/log/STWave
+log_level: INFO
+data:
+  batch_size: 16
+  train_val_test_ratio: [0.7, 0.1, 0.2]
+  shuffle: true
+  num_workers: 0
+  dataset_dir: ../Data2Model/datasets/KnowAir-YRD
+  adj_file: ../Data2Model/datasets/KnowAir-YRD/adj_mx.pkl
+  tem_adj_file: ../Data2Model/datasets/KnowAir-YRD/temadj.npy
+
+model:
+  input_len: 96
+  output_len: 12
+  layers: 2
+  heads: 8
+  dims: 15
+  samples: 1
+  num_nodes: 127
+  steps_per_day: 24
+  
+
+train:
+  max_grad_norm: 5
+  base_lr: 0.001
+  epochs: 200
+  patience: 30
+  wave: sym2
+  level: 1

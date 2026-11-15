@@ -1,0 +1,29 @@
+---
+base_dir: runs/log/AGCRN
+log_level: INFO
+data:
+  batch_size: 16
+  train_val_test_ratio: [0.7, 0.1, 0.2]
+  shuffle: true
+  num_workers: 0
+  dataset_dir: ../Data2Model/datasets/ETTh1
+  default_graph: true
+
+model:
+  input_len: 96
+  output_len: 336
+  num_nodes: 7
+  input_dim: 1
+  output_dim: 1
+  rnn_units: 64
+  num_rnn_layers: 2
+  embed_dim: 10
+  cheb_order: 2
+  
+train:
+  max_grad_norm: 5
+  base_lr: 0.003
+  steps: [5, 20, 40, 70]
+  patience: 15
+  epochs: 100
+  lr_decay_ratio: 0.3

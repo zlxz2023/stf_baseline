@@ -1,0 +1,30 @@
+---
+base_dir: runs/log/GWNet
+log_level: INFO
+data:
+  batch_size: 16
+  train_val_test_ratio: [0.7, 0.1, 0.2]
+  shuffle: True
+  num_workers: 0
+  dataset_dir: ../Data2Model/datasets/METR-LA
+  graph_pkl_filename: ../Data2Model/datasets/METR-LA/adj_mx.pkl
+  adj_type: doubletransition
+  randomadj: True
+  aptonly: False
+
+model:
+  nhid: 32
+  input_len: 96
+  output_len: 12
+  input_dim: 2
+  output_dim: 1
+  num_nodes: 207
+  gcn_bool: True
+  addaptadj: True
+
+train:
+  max_grad_norm: 5
+  dropout: 0.3
+  base_lr: 0.001
+  epochs: 100
+  weight_decay: 0.0001
